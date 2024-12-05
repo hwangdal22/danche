@@ -102,7 +102,7 @@
             outputDiv.innerHTML = ""; // 초기화
 
             people.forEach(person => {
-                const fullMessage = `<b>${person.name}의원님</b>,<br>${message}<br><br>`;
+                const fullMessage = `<b>${person.phone}</b><br><b>${person.name}의원님</b>,<br>${message}<br><br>`;
                 outputDiv.innerHTML += fullMessage;
             });
         }
