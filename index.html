@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단체문자 생성기</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>단체문자 생성기</h1>
+    <label for="message">단체문자 내용 입력:</label>
+    <textarea id="message" placeholder="여기에 메시지를 입력하세요"></textarea>
+    <button onclick="generateMessages()">단체문자 생성하기</button>
+    <div id="output"></div>
+
+    <script>
+        const people = [
+            { name: "이철규", phone: "010-5657-1448" },
+            { name: "이양수", phone: "010-6890-1126" },
+            { name: "한기호", phone: "010-8793-0066" },
+            { name: "유상범", phone: "010-9035-1842" },
+            { name: "김성원", phone: "010-4247-3379" },
+            { name: "김은혜", phone: "010-8900-1351" },
+            { name: "김선교", phone: "010-5006-5358" },
+            { name: "정찬민", phone: "010-5214-2438" },
+            { name: "송석준", phone: "010-4531-1403" },
+            { name: "유의동", phone: "010-4071-3971" },
+            { name: "최춘식", phone: "010-9832-0129" },
+            { name: "윤영석", phone: "010-6341-8369" },
+            { name: "강기윤", phone: "010-9280-6451" },
+            { name: "박대출", phone: "010-6364-8552" },
+            { name: "강민국", phone: "010-9989-3399" },
+            { name: "서일준", phone: "010-3175-3022" },
+            { name: "윤한흥", phone: "010-4749-4549" },
+            { name: "이달곤", phone: "010-6484-5631" },
+            { name: "정점식", phone: "010-8785-3037" },
+            { name: "조해진", phone: "010-3749-9456" },
+            { name: "조형두", phone: "010-6203-0313" },
+            { name: "구자근", phone: "010-4504-1116" },
+            { name: "김영식", phone: "010-2008-1700" },
+            { name: "김석기", phone: "010-9134-9559" },
+            { name: "김정재", phone: "010-2484-3136" },
+            { name: "김형동", phone: "010-9247-7296" },
+            { name: "박형수", phone: "010-9055-9894" },
+            { name: "송언석", phone: "010-4001-2707" },
+            { name: "이만희", phone: "010-5256-7648" },
+            { name: "임이자", phone: "010-7491-4071" },
+            { name: "정희용", phone: "010-2803-2291" },
+            { name: "강대식", phone: "010-2605-8080" },
+            { name: "김상훈", phone: "010-3510-3200" },
+            { name: "양금희", phone: "010-9880-1779" },
+            { name: "김승수", phone: "010-5054-3356" },
+            { name: "윤재옥", phone: "010-6251-6937" },
+            { name: "주호영", phone: "010-3686-3726" },
+            { name: "추경호", phone: "010-9173-5841" },
+            { name: "김도읍", phone: "010-5380-0400" },
+            { name: "조경태", phone: "010-5231-2663" },
+            { name: "박수영", phone: "010-7149-4703" },
+            { name: "백종헌", phone: "010-2992-4000" },
+            { name: "이헌승", phone: "010-3054-7979" },
+            { name: "김미애", phone: "010-3235-3478" },
+            { name: "권영세", phone: "010-9176-9383" },
+            { name: "엄태영", phone: "010-4531-2394" },
+            { name: "이종배", phone: "010-7387-3838" },
+            { name: "조정훈", phone: "010-2575-1411" },
+            { name: "김기현", phone: "010-4692-8600" },
+            { name: "박성민", phone: "010-2291-3006" },
+            { name: "서범수", phone: "010-9419-2667" },
+            { name: "배준영", phone: "010-9049-0227" },
+            { name: "김태흠", phone: "010-2100-7035" },
+            { name: "성일종", phone: "010-3142-9464" },
+            { name: "강승규", phone: "010-8650-9808" },
+            { name: "김민전", phone: "010-2845-3715" },
+            { name: "김재원", phone: "010-5522-5222" }
+        ];
+
+        function generateMessages() {
+            const message = document.getElementById('message').value;
+            const outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = ""; // 초기화
+
+            people.forEach(person => {
+                const fullMessage = `<b>${person.name}의원님</b>,<br>${message}<br><br>`;
+                outputDiv.innerHTML += fullMessage;
+            });
+        }
+    </script>
+</body>
+</html>
